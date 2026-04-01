@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quản lý sinh viên</title>
+    <style>
+       
+        body {
+            width: 90%;
+            max-width: 1200px;
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            background-color: #f4f4f4;
+        }
+         *{
+            box-sizing:border-box;
+            }
+        .top {
+            background-image: url(https://tse3.mm.bing.net/th/id/OIP.f955eR5C2FAkk9FL5bbarAHaEK?pid=Api&P=0&h=220);
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+        .khu_trung_tam {
+            display: flex; 
+            gap: 15px;
+            background-color: white;
+            padding: 10px;
+        }
+        .left {
+            float: left;
+            width: 200px;
+            border: 1px solid gray;
+        }
+        .left ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .left li {
+            border-bottom: 1px solid gray;
+        }
+        .left a {
+                text-decoration: none;
+                color: black;
+                display: block;
+                padding: 10px;
+        }
+        .left a:hover {
+            background-color:#blue;
+            }
+        .center {
+            float: left;
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .right {
+            float: left;
+            flex: 1;
+            padding: 10px;
+            border-left: 1px solid #dddddd;
+        }
+        .right img { 
+            width: 100%; 
+            height: auto;
+            }
+        .bang {
+            border: 1px solid black;
+            width: 100%;
+        }
+        .hang {display:flex;
+            border-bottom: 1px solid black;
+        }
+        .hang:last-child {
+            border-bottom: none;
+        }
+        .tieude {
+            text-align: center;
+            flex: 1;
+            font-weight: bold;
+            color: white;
+            background-color: skyblue;
+            padding: 8px;
+        }
+        .cot_trai {
+            width: 150px;
+            border-right: 1px solid black;
+            text-align: right;
+            padding: 8px;
+            background: #f9f9f9;}
+        .cot_phai {
+            flex: 1;
+            padding: 8px;
+        }
+        .cot {
+            padding: 8px;
+            border-right: 1px solid black;
+            flex: 1;
+        }
+        .cot:last-child { 
+            border-right: none; 
+                }
+        .b {
+            font-weight: bold;
+            text-align: center;
+            background: #eeeeee; 
+            }
+        .bottom {
+            margin-top: 20px;
+            padding: 15px;
+            border-top: 2px solid #333333;
+            text-align: center;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top">
+        <h3>KHOA CÔNG NGHỆ THÔNG TIN - TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP VIỆT TRÌ</h3>
+        <h2>CHƯƠNG TRÌNH QUẢN LÝ SINH VIÊN</h2>
+    </div>
+
+    <div class="khu_trung_tam">
+        <div class="left">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Quản lý sinh viên</a></li>
+                <li><a href="#">Quản lý điểm</a></li>
+                <li><a href="#">Quản lý lớp học</a></li>
+                <li><a href="#">Quản lý khoa</a></li>
+                <li><a href="#">Quản lý người dùng</a></li>
+                <li><a href="#">Chức năng khác</a></li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <div class="bang">
+                <div class="hang"><div class="tieude">THÊM SINH VIÊN</div></div>
+                <div class="hang">
+                    <div class="cot_trai"><label>Mã sinh viên</label></div>
+                    <div class="cot_phai"><input type="text" name="masv"></div>
+                </div>
+                <div class="hang">
+                    <div class="cot_trai"><label>Họ tên</label></div>
+                    <div class="cot_phai"><input type="text" name="ten"></div>
+                </div>
+                <div class="hang">
+                    <div class="cot_trai"><label>Ngày sinh</label></div>
+                    <div class="cot_phai"><input type="text" name="ngay sinh"></div>
+                </div>
+                <div class="hang">
+                    <div class="cot_trai"><label>Hình</label></div>
+                    <div class="cot_phai">
+                        <input type="text" name="hinhanh">
+                        <input type="button" value="Browse...">
+                    </div>
+                </div>
+                <div class="hang">
+                    <div class="cot_trai"></div>
+                    <div class="cot_phai">
+                        <input type="submit" value="Add">
+                        <input type="reset" value="Update">
+                        <input type="submit" value="Save">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bang">
+                <div class="hang"><div class="tieude">THÔNG TIN SINH VIÊN</div></div>
+                <div class="hang">
+                    <div class="cot b">STT</div>
+                    <div class="cot b">MASV</div>
+                    <div class="cot b">Họ và tên</div>
+                    <div class="cot b">Ngày sinh</div>
+                    <div class="cot b">Hình</div>
+                </div>
+                <div class="hang">
+                    <div class="cot">1</div><div class="cot">TH09</div><div class="cot">Nguyễn Lan</div><div class="cot">1/1/1986</div><div class="cot">H1.jpg</div>
+                </div>
+                <div class="hang">
+                    <div class="cot">2</div><div class="cot">TH89</div><div class="cot">Thanh Nhàn</div><div class="cot">1/8/1986</div><div class="cot">H2.jpg</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.G86pBh5Xh1bNu5gGPze2LwHaEK?pid=Api&P=0&h=220">
+            <p>Lớp chuyên đề về HTML và CSS trang bị kiến thức cơ bản về xây dựng cấu trúc và định dạng trang web.</p>
+            <a href="#">Thông báo về lịch thi học kỳ</a><br><br>
+            <a href="#">Nhịp sống trẻ</a>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <p>Khoa Công nghệ thông tin - Số 9 Đường Tiên Sơn, Phường Thanh Miếu, TP. Việt Trì, Tỉnh Phú Thọ<br>
+        Email: khcntt@vui.edu.vn</p>
+    </div>
+
+</body>
+</html>
