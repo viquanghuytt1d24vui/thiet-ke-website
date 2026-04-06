@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tin tức 24H</title>
+    <style>
+        body {
+            width: 80%;
+            font-family: Arial;
+            background-color:white;
+            margin: 0 auto;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .top {
+            width: 100%;
+            height: 100px;
+            color: blue;
+            text-align: center;
+            position: relative;
+            background-color:#EEEEEE;
+        }
+        .top img {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .top h1 {
+            margin: 0;
+            line-height: 100px;
+            font-size:35px;
+        }
+        .menu1 {
+            background-color: #336699;
+            width: 100%;
+            padding: 5px 0;
+            height: 50px;
+        }
+        .menu1 ul {
+            margin: 10px;
+            padding-left: 20px;
+        }
+        .menu1 li {
+            list-style: none;
+            display: inline-block;
+            margin-right: 25px;
+        }
+        .menu1 a {
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            font-size: 16px;
+        }
+        .menu1 a:hover{
+        	color: blue;
+        	background-color:white;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            background-color: white;
+            padding: 30px;
+        }
+        .left {
+            width: 20%;
+            text-align: left;
+            line-height: 35px;
+        }
+        .center {
+            width: 45%;
+        }
+        .right {
+        	line-height: 25px;
+            width: 35%;
+            padding-left: 50px;
+            border-left: 1px solid #eee;
+        }
+        .center input[type="text"], 
+        .center input[type="tel"], 
+        .center select, 
+        .center textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .center textarea {
+            height: 120px;
+        }
+        .center input[type="submit"]{
+        	background-color:green;
+        	 color: white;
+        	 border: none; 
+        	 padding: 5px 10px;
+        	}
+        .center input[type="reset"] { 
+        	background-color: #0000ff; 
+        	color: white; 
+        	border: none; 
+        	padding: 5px 10px;
+        	}
+        .center input[type="submit"]:hover{
+        	color: white;
+        	background-color:red;
+        }
+        .center input[type="reset"]:hover{
+        	color: white;
+        	background-color:red;
+        }
+        .right ul {
+            list-style: none;
+        }
+        .right li {
+            margin-bottom:12px;
+        }
+        .right a {
+            text-decoration:none;
+            color: #000;}
+        .bottom {
+            width: 100%;
+            color: blue;
+            background-color: #eeeeee;
+            text-align: center;
+            padding: 15px 0;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.yR4HBZ9UZkxNt0kRcSS1cgHaD8?pid=Api&P=0&h=220">
+        <h1>TIN TỨC 24H</h1>
+    </div>
+
+    <div class="menu1">
+        <ul>
+            <li><a href="#">Chính trị</a></li>
+            <li><a href="#">Xã hội</a></li>
+            <li><a href="#">Sức khỏe</a></li>
+            <li><a href="#">Giáo dục</a></li>
+            <li><a href="#">Thể thao</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="left">
+            <label>Họ tên: <span class="required">*</span></label><br>
+            <label>Địa chỉ: </label><br>
+            <label>Số điện thoại: <span class="required">*</span></label><br>
+            <label>Giới tính: </label><br>
+            <label style="margin-top: 5px; display: block;">Năm sinh: </label><br>
+            <label style="margin-top: 5px; display: block;">Nội dung liên hệ: <span class="required">*</span></label>
+        </div>
+
+        <div class="center">
+            <form>
+                <input type="text" placeholder="Họ tên">
+                <input type="text" placeholder="Địa chỉ">
+                <input type="tel" placeholder="Số điện thoại">
+                
+                <div style="margin-bottom: 15px;">
+                    <input type="radio" name="gt" id="nam"> <label for="nam">Nam</label>
+                    <input type="radio" name="gt" id="nu"> <label for="nu">Nữ</label>
+                </div>
+
+                <select>
+                    <option>2003</option>
+                    <option>2004</option>
+                    <option>2005</option>
+                </select>
+
+                <textarea></textarea>
+
+                <div style="margin-top: 10px;">
+                    <input type="submit" class="submit" value="Gửi thông tin góp ý">
+                    <input type="reset" class="reset" value="Nhập lại">
+                </div>
+            </form>
+        </div>
+
+        <div class="right">
+            <ul>
+                <li><a href="#">Tin tức thị trường</a></li>
+                <li><a href="#">Tin tức trong ngày</a></li>
+                <li><a href="#">Thông tin chứng khoán</a></li>
+                <li><a href="#">Sức khỏe đời sống</a></li>
+                <li><a href="#">Công nghệ thông tin</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <p>Cơ quan chủ quản: Công ty Cổ phần Quảng cáo Trực tuyến 24H<br><b>© 24h.com</b></p>
+    </div>
+</body>
+</html>
