@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng Nhập</title>
+    <style>
+        body {
+            width: 50%;
+            margin: 50px auto;
+            font-family: arial, sans-serif;
+        }
+        * { box-sizing: border-box; }
+        .container {
+            width: 100%;
+            display: flex;
+            line-height: 2.5;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .left {
+        	width: 30%;
+        	padding-left: 10px;
+        	 }
+        .right {
+        	flex: 1; 
+        }
+        .top {
+        	width: 100%;
+        	text-align: center;
+        }
+        .thongbao {
+        	color: red;
+        	font-size: 12px;
+        	margin-left: 10px;
+        }
+    </style>
+    <script>
+        function hienthi() {
+            let hoten = document.getElementById('ht').value;
+            let matkhau = document.getElementById('mk').value;
+            document.getElementById("a").innerHTML = "";
+            document.getElementById("b").innerHTML = "";
+            let hopLe = true;
+            if (hoten == "") {
+                document.getElementById("a").innerHTML = "Bạn chưa nhập tên đăng nhập";
+                hopLe = false;
+            }
+            if (matkhau == "") {
+                document.getElementById('b').innerHTML = "Bạn chưa nhập mật khẩu";
+                hopLe = false;
+            } else if (isNaN(matkhau)) {
+                document.getElementById('b').innerHTML = "Mật khẩu phải là số";
+                hopLe = false;
+            } else if (matkhau.length < 8) {
+                document.getElementById('b').innerHTML = "Mật khẩu phải từ 8 ký tự trở lên";
+                hopLe = false;
+            }
+            if (hopLe) {
+                alert("Đăng nhập thành công!");
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="top">
+        <h2>ĐĂNG NHẬP</h2>
+    </div>
+    <form onsubmit="return hienthi()">
+        <div class="container">
+            <div class="left">
+                <label for="ht">Họ tên: </label><br>
+                <label for="mk">Mật khẩu: </label>
+            </div>
+            <div class="right">
+                <input type="text" name="hoten" id="ht" size="25">
+                <span id="a" class="thongbao"></span><br>
+                <input type="password" name="matkhau" id="mk" size="25">
+                <span id="b" class="thongbao"></span><br>
+                <input type="submit" name="dangnhap" value="Đăng nhập">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
