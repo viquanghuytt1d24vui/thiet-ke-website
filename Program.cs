@@ -1,54 +1,40 @@
 ﻿using System;
-namespace Bai2{
 class Program
 {
-    static int TongSoChan(int[] a)
+    static double TinhLuong(double luongCoBan, int soNgayLam, double heSoThuong)
     {
-        int tong = 0;
-        foreach (int x in a)
-        {
-            if (x % 2 == 0)
-            {
-                tong += x;
-            }
-        }
-        return tong;
+        return luongCoBan/26*soNgayLam*heSoThuong;
     }
-    static int TimGiaTriLonNhat(int[] a)
-    {
-        int max = a[0];
-        foreach (int x in a)
-        {
-            if (x > max)
-            {
-                max = x;
-            }
-        }
-        return max;
-    }
-
     static void Main(string[] args)
     {
         try
         {
-            Console.Write("Nhap n: ");
-            int n = int.Parse(Console.ReadLine());
-            if (n <= 0)
+            Console.Write("Nhap luong co ban: ");
+            double luongCoBan = double.Parse(Console.ReadLine());
+            Console.Write("Nhap so ngay: ");
+            int soNgayLam = int.Parse(Console.ReadLine());
+            Console.Write("Nhap he so thuong: ");
+            double heSoThuong = double.Parse(Console.ReadLine());
+            if (soNgayLam == 0)
             {
-                throw new FormatException();
+                throw new Exception();
             }
-            int[] a = new int[n];
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write("Nhap a["+i+"]: ");
-                a[i] = int.Parse(Console.ReadLine());
-            }
-            Console.WriteLine("Tong so chan: " + TongSoChan(a));
-            Console.WriteLine("Gia tri lon nhat: " + TimGiaTriLonNhat(a));
+            double luong = TinhLuong(luongCoBan,soNgayLam,heSoThuong);
+            Console.WriteLine("luong nhan vien: "+ luong);
+        }
+        
+        catch (FormatException ex)
+        {
+            Console.WriteLine("loi du lieu khong hop le"+ex.Message);
         }
         catch (Exception ex)
         {
-            Console.WriteLine("loi"+ex.Message);
+            Console.WriteLine("loi chia cho 0"+ ex.Message);
+        }
+        finally
+        {
+            Console.WriteLine("ket thuc");
         }
     }
-}}
+}
+
