@@ -1,46 +1,54 @@
 ﻿using System;
-namespace TinhToan
+namespace Bai2{
+class Program
 {
-    class Program
+    static int TongSoChan(int[] a)
     {
-        static string xeploai(double diem)
+        int tong = 0;
+        foreach (int x in a)
         {
-            if (diem < 0 || diem > 10)
-                return "nhap diem tu 0 toi 10";
-            else
+            if (x % 2 == 0)
             {
-                string xep_loai = "";
-
-                if (diem >= 9.0)
-                    xep_loai = "xuat sac";
-                else if (diem >= 8.0)
-                    xep_loai = "Gioi";
-                else if (diem >= 6.5)
-                    xep_loai = "Kha";
-                else if (diem >= 5.0)
-                    xep_loai = "Trung binh";
-                else
-                    xep_loai = "Yeu";
-
-                return xep_loai;
+                tong += x;
             }
         }
-
-        static void Main(string[] args)
+        return tong;
+    }
+    static int TimGiaTriLonNhat(int[] a)
+    {
+        int max = a[0];
+        foreach (int x in a)
         {
-            try
+            if (x > max)
             {
-                Console.Write("Nhap diem: ");
-                double d = double.Parse(Console.ReadLine()!);
-
-                Console.WriteLine(xeploai(d));
-
-                Console.ReadKey();
+                max = x;
             }
-            catch (Exception ex)
+        }
+        return max;
+    }
+
+    static void Main(string[] args)
+    {
+        try
+        {
+            Console.Write("Nhap n: ");
+            int n = int.Parse(Console.ReadLine());
+            if (n <= 0)
             {
-                Console.WriteLine("Loi: " + ex.Message);
+                throw new FormatException();
             }
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("Nhap a["+i+"]: ");
+                a[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Tong so chan: " + TongSoChan(a));
+            Console.WriteLine("Gia tri lon nhat: " + TimGiaTriLonNhat(a));
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("loi"+ex.Message);
         }
     }
-}
+}}
